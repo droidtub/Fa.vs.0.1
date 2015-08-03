@@ -1,5 +1,9 @@
-package com.example.flashalert;
+package com.example.flashalert.view;
 
+import com.example.flashalert.R;
+import com.example.flashalert.R.id;
+import com.example.flashalert.R.layout;
+import com.example.flashalert.adapter.MainViewAdapter;
 import com.example.flashalert.controller.MainController;
 
 import android.content.Context;
@@ -34,15 +38,15 @@ public class MainView {
 	}*/
 	
 	public void initializeUi(){
-		mActivity.setContentView(R.layout.activity_main);
+		mActivity.setContentView(R.layout.fragment_setting_normal);
 		mToolbar = (Toolbar)mActivity.findViewById(R.id.toolbar);
 		mActivity.setSupportActionBar(mToolbar);
 		mActivity.getSupportActionBar().setDisplayShowHomeEnabled(true);
 		
-		recyclerView = (RecyclerView)mActivity.findViewById(R.id.container_body);
-		recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-		recyclerView.setHasFixedSize(true);
-		mAdapter = new MainViewAdapter(this);
-		recyclerView.setAdapter(mAdapter);
+//		recyclerView = (RecyclerView)mActivity.findViewById(R.id.container_body);
+//		recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
+//		recyclerView.setHasFixedSize(true);
+//		mAdapter = new MainViewAdapter(this);
+//		recyclerView.setAdapter(mAdapter);
 	}
 }

@@ -1,4 +1,6 @@
-package com.example.flashalert;
+package com.example.flashalert.adapter;
+
+import com.example.flashalert.view.MainView;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

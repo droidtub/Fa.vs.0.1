@@ -1,6 +1,6 @@
 package com.example.flashalert.controller;
 
-import com.example.flashalert.MainView;
+import com.example.flashalert.view.MainView;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;

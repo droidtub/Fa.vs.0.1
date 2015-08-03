@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_fragment" >
+
+    <ScrollView
+        android:id="@+id/scroll_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_ad_view_fragment_setting" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_limit_battery"
+                style="@style/CustomTitleSetting"
+                android:text="TURN OFF FLASH WHEN BATTERY BELOW" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_limit_battery"
+                style="@style/CustomRelativeLayoutSetting" >
+
+                <ImageView
+                    android:id="@+id/icon_limit_battery"
+                    style="@style/CustomImageViewSetting"
+                    android:background="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/txt_limit_battery"
+                    style="@style/CustomTextViewSetting"
+                    android:layout_toRightOf="@+id/icon_limit_battery"
+                    android:text="Battery percent" />
+                
+                <TextView
+			        android:id="@+id/on_limit_battery"
+			        style="@style/CustomTextViewSetting_Change_Display"
+			        android:text="30%" />
+
+            </RelativeLayout>
+            
+            <TextView
+                android:id="@+id/tv_speed"
+                style="@style/CustomTitleSetting"
+                android:text="SPEED" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_on_length"
+                style="@style/CustomRelativeLayoutSetting" >
+
+                <TextView
+                    android:id="@+id/txt_on_length"
+                    style="@style/CustomTextViewSetting"
+                    android:text="On length" />
+                
+                <TextView
+			        android:id="@+id/on_length_ms"
+			        style="@style/CustomTextViewSetting_Change_Display"
+			        android:text="500ms" />
+            </RelativeLayout>
+            
+            <SeekBar 
+                android:id="@+id/seekbar_on_length"
+                style="@style/CustomSeekbarSetting" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_off_length"
+                style="@style/CustomRelativeLayoutSetting" >
+
+                <TextView
+                    android:id="@+id/txt_off_length"
+                    style="@style/CustomTextViewSetting"
+                    android:text="Off length" />
+                
+                <TextView
+			        android:id="@+id/off_length_ms"
+			        style="@style/CustomTextViewSetting_Change_Display"
+			        android:text="500ms" />
+            </RelativeLayout>
+            
+            <SeekBar 
+                android:id="@+id/seekbar_off_length"
+                style="@style/CustomSeekbarSetting" />
+            
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linear_ad_view_fragment_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEST NOW"
+            android:textSize="21dp" />
+
+        <!-- <com.google.android.gms.ads.AdView -->
+        <!-- android:id="@+id/ad_view_fragment_setting" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center" -->
+        <!-- ads:adSize="BANNER" -->
+        <!-- ads:adUnitId="@string/banner_ad_unit_id" -->
+        <!-- android:visibility="gone" > -->
+        <!-- </com.google.android.gms.ads.AdView> -->
+    </LinearLayout>
+
+</RelativeLayout>

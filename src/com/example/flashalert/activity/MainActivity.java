@@ -1,7 +1,10 @@
-package com.example.flashalert;
+package com.example.flashalert.activity;
 
 import android.support.v7.app.ActionBarActivity;
 
+import com.example.flashalert.R;
+import com.example.flashalert.R.id;
+import com.example.flashalert.R.menu;
 import com.example.flashalert.controller.MainController;
 
 import android.os.Bundle;
