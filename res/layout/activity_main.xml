@@ -1,24 +1,35 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <LinearLayout
-        android:id="@+id/container_toolbar"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_weight="0.2"
+        android:text="LED Flash for Alerts"
+        android:gravity="center" 
+        android:textColor="@color/text_bottom_color"
+        android:textSize="18sp"/>
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-    </LinearLayout>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.0">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/container_body"
-        android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/power_btn"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center" 
+            android:src="@drawable/power_switch_icon"
+            android:background="@drawable/power_selector"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:visibility="gone" />
-
-</RelativeLayout>
+        android:layout_weight="0.2"
+        android:orientation="vertical"/>
+</LinearLayout>
