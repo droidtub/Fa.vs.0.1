@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_bar"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <ImageButton
+        android:id="@+id/share_btn"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="match_parent" 
+        android:background="@color/windowBackground"/>
+    <TextView
+        android:id="@+id/settings_btn"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Setting"
+        android:textSize="18sp"
+        android:textColor="@color/text_bottom_color"/>
+    <ImageButton
+        android:id="@+id/like_btn"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="match_parent" 
+        android:background="@color/windowBackground"/>
+</LinearLayout>
