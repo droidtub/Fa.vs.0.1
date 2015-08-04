@@ -29,7 +29,6 @@ public class SettingActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		settingController = new SettingController(this);
 		settingController.onCreate(savedInstanceState);
-		
 	}
 
 	@Override

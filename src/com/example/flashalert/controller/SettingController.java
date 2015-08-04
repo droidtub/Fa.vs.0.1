@@ -4,13 +4,14 @@ import com.example.flashalert.view.SettingView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
 public class SettingController {
 
-	private Activity mActivity;
+	private ActionBarActivity mActivity;
 	private SettingView settingView;
 	
-	public SettingController(Activity activity){
+	public SettingController(ActionBarActivity activity){
 		mActivity = activity;
 		settingView = new SettingView(this, mActivity);
 	}

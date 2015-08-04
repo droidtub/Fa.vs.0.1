@@ -6,12 +6,13 @@ import com.example.flashalert.controller.SettingController;
 
 import android.app.Activity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
 public class SettingView {
 
 	private SettingController mController;
-	private Activity mActivity;
+	private ActionBarActivity mActivity;
 	private Toolbar mToolbar;
 	private SettingViewPagerAdapter adapter;
 	private ViewPager pager;
@@ -19,7 +20,7 @@ public class SettingView {
 	private CharSequence Titles[] = { "MAIN", "CUSTOM" };
 	int Numboftabs = 2;
 	
-	public SettingView(SettingController controller, Activity activity){
+	public SettingView(SettingController controller, ActionBarActivity activity){
 		mController = controller;
 		mActivity = activity;
 	}
@@ -29,11 +30,11 @@ public class SettingView {
 		
 		// Creating The Toolbar and setting it as the Toolbar for the activity
 		mToolbar = (Toolbar)mActivity.findViewById(R.id.toolbar);
-		/*mActivity.setSupportActionBar(mToolbar);
-		mActivity.getSupportActionBar().setDisplayShowHomeEnabled(true);*/
+		mActivity.setSupportActionBar(mToolbar);
+		mActivity.getSupportActionBar().setDisplayShowHomeEnabled(true);
 		
 		// Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new SettingViewPagerAdapter(mActivity.getFragmentManager(), Titles, Numboftabs);
+        adapter =  new SettingViewPagerAdapter(mActivity.getSupportFragmentManager(), Titles, Numboftabs);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager)mActivity.findViewById(R.id.pager);
