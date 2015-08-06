@@ -34,7 +34,7 @@ public class MainView implements View.OnClickListener{
 	public MainView(MainController controller, ActionBarActivity activity){
 		mController = controller;
 		mActivity = activity;
-		pref = mActivity.getSharedPreferences(Properties.PREF_MAIN_NAME, Context.MODE_PRIVATE);
+		pref = mActivity.getApplicationContext().getSharedPreferences(Properties.PREF_MAIN_NAME, Context.MODE_PRIVATE);
 	}
 	
 	
@@ -66,17 +66,17 @@ public class MainView implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.power_btn:
-			if(!pref.getBoolean(Properties.POWER_VALUE, false)){
+			if(!pref.getBoolean(Properties.POWER, false)){
 				SharedPreferences.Editor edit = pref.edit();
-				edit.putBoolean(Properties.POWER_VALUE, true);
+				edit.putBoolean(Properties.POWER, true);
 				edit.apply();
 			}
 			else{
 				SharedPreferences.Editor edit = pref.edit();
-				edit.putBoolean(Properties.POWER_VALUE, false);
+				edit.putBoolean(Properties.POWER, false);
 				edit.apply();
 			}
-			v.setSelected(pref.getBoolean(Properties.POWER_VALUE, false));
+			v.setSelected(pref.getBoolean(Properties.POWER, false));
 			break;
 		case R.id.settings_btn:
 			Intent i = new Intent(mActivity, SettingActivity.class);

@@ -3,6 +3,8 @@ package com.example.flashalert.service;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.example.flashalert.utils.Properties;
+
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +25,9 @@ public class CallService extends Service {
 	private Context mContext;
 	private SharedPreferences prefs;
 	private Camera cam;
+	private Parameters params;
 	private boolean flashIsOn = false;
+	private boolean enable = true;
 	
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -31,7 +35,16 @@ public class CallService extends Service {
 		throw new UnsupportedOperationException("Not yet implemented");
 	}
 
-	@SuppressWarnings("deprecation")
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		Log.e(TAG, "Create service");
+		mContext = this;
+		prefs = mContext.getApplicationContext().getSharedPreferences(Properties.PREF_MAIN_NAME, Context.MODE_PRIVATE);
+	}
+	
+	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.e(TAG, "onStartCommand");
@@ -46,88 +59,62 @@ public class CallService extends Service {
 		
 		if (curState.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_IDLE)
 				|| curState.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
-			flickFlash(false);
-//			flashLightOff();
+
+			enable = false;
 		}
 
 		if (curState.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_RINGING)) {
+	
 			// TODO flicker led
-			flickFlash(true);
+			enable = true;
+			int onLength = prefs.getInt(Properties.INCOMING_CALL_ON_LENGTH, Properties.VALUE_DEFAULT_FLASH_ON_OFF);
+			int offLength = prefs.getInt(Properties.INCOMING_CALL_OFF_LENGTH, Properties.VALUE_DEFAULT_FLASH_ON_OFF);
+			flickFlash(onLength, offLength);
 		}
 		return super.onStartCommand(intent, flags, startId);
 	}
 
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		Log.e(TAG, "Create service");
-		mContext = this;
-	}
-	
-	public void flickFlash(boolean enable) {
-//		if (!enable && flashIsOn) {
-//			flashLightOff();
-//			return;
-//		} else if (!enable && !flashIsOn){
-//			flashLightOn();
-//			flashLightOff();
-//			return;
-//		}
-		while(true) {
-			if (!enable) {
-				flashLightOff();
-				break;
+	public void flickFlash(final int onLength, final int offLength) {
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				cam = Camera.open();
+			    params = cam.getParameters();
+			    cam.startPreview();
+
+			    while (enable) {
+			        flipFlash();
+			        try {
+						Thread.sleep(onLength);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+			        flipFlash();
+			        try {
+						Thread.sleep(offLength);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+			    }
+			    cam.stopPreview();
+			    cam.release();
 			}
-				
-			flashLightOn();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			flashLightOff();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-        	
-    	}
-	}
-	
-	public void flashLightOn() {
-	    try {
-	        if (getPackageManager().hasSystemFeature(
-	                PackageManager.FEATURE_CAMERA_FLASH)) {
-	        	flashIsOn = true;
-            	cam = Camera.open();
-	            Parameters p = cam.getParameters();
-	            p.setFlashMode(Parameters.FLASH_MODE_TORCH);
-	            cam.setParameters(p);
-	            cam.startPreview();
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        Toast.makeText(getBaseContext(), "Exception flashLightOn()",
-	                Toast.LENGTH_SHORT).show();
-	    }
+		}).start();
+		
 	}
 
-	public void flashLightOff() {
-	    try {
-	        if (getPackageManager().hasSystemFeature(
-	                PackageManager.FEATURE_CAMERA_FLASH)) {
-	        	flashIsOn = false;
-	            cam.stopPreview();
-	            cam.release();
-	            cam = null;
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        Toast.makeText(getBaseContext(), "Exception flashLightOff",
-	                Toast.LENGTH_SHORT).show();
+	private void flipFlash(){
+	    if (flashIsOn) {
+	        params.setFlashMode(Parameters.FLASH_MODE_OFF);
+	        cam.setParameters(params);
+	        flashIsOn = false;
+	    } else{
+	        params.setFlashMode(Parameters.FLASH_MODE_TORCH);
+	        cam.setParameters(params);
+	        flashIsOn = true;
 	    }
 	}
+	
+
 }
