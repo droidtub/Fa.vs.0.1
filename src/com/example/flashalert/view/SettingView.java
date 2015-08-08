@@ -3,11 +3,19 @@ package com.example.flashalert.view;
 import com.example.flashalert.R;
 import com.example.flashalert.adapter.SettingViewPagerAdapter;
 import com.example.flashalert.controller.SettingController;
+import com.example.flashalert.utils.Properties;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+
 
 public class SettingView {
 
@@ -19,10 +27,12 @@ public class SettingView {
 	private SlidingTabLayout tabs;
 	private CharSequence Titles[] = { "MAIN", "CUSTOM" };
 	int Numboftabs = 2;
+	private SharedPreferences pref;
 	
 	public SettingView(SettingController controller, ActionBarActivity activity){
 		mController = controller;
 		mActivity = activity;
+		pref = mActivity.getSharedPreferences(Properties.PREF_MAIN_NAME, Context.MODE_PRIVATE);
 	}
 	
 	public void createSettingUi(){
@@ -48,7 +58,7 @@ public class SettingView {
         tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return mActivity.getResources().getColor(R.color.white);
+                return mActivity.getResources().getColor(R.color.yellow);
             }
         });
         
@@ -57,4 +67,8 @@ public class SettingView {
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
 	}
+
+	
+
+	
 }

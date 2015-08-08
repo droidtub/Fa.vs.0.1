@@ -37,66 +37,78 @@
         </activity>
         <activity android:name="com.example.flashalert.activity.SettingActivity" >
         </activity>
-        
+
         <!-- BroadcastReceiver that listens for incoming SMS messages -->
-        <!-- Note the use of android:enabled that is linked to a bool. This will mean this receiver
-             is enabled on KitKat devices and above -->
-        <receiver android:name="com.example.flashalert.receiver.SmsReceiver"
-                  android:enabled="@bool/hasKitKat"
-                  android:permission="android.permission.BROADCAST_SMS">
+        <!--
+             Note the use of android:enabled that is linked to a bool. This will mean this receiver
+             is enabled on KitKat devices and above
+        -->
+        <receiver
+            android:name="com.example.flashalert.receiver.SmsReceiver"
+            android:enabled="@bool/hasKitKat"
+            android:permission="android.permission.BROADCAST_SMS" >
 
             <!-- KitKat+ SMS received action -->
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_DELIVER" />
             </intent-filter>
-
         </receiver>
 
         <!-- BroadcastReceiver that listens for incoming SMS messages -->
-        <!-- Note the use of android:enabled that is linked to a bool. This will mean this receiver
-             is enabled on preKitKat devices -->
-        <receiver android:name="com.example.flashalert.receiver.SmsReceiverLegacy"
-                  android:enabled="@bool/preKitKat">
+        <!--
+             Note the use of android:enabled that is linked to a bool. This will mean this receiver
+             is enabled on preKitKat devices
+        -->
+        <receiver
+            android:name="com.example.flashalert.receiver.SmsReceiverLegacy"
+            android:enabled="@bool/preKitKat" >
 
             <!-- Pre-KitKat SMS received action -->
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
-
         </receiver>
 
         <!-- BroadcastReceiver that listens for incoming MMS messages -->
-        <!-- Note the use of android:enabled that is linked to a bool. This will mean this receiver
-             is enabled on KitKat devices and above -->
-        <receiver android:name="com.example.flashalert.receiver.MmsReceiver"
-                  android:enabled="@bool/hasKitKat"
-                  android:permission="android.permission.BROADCAST_WAP_PUSH">
+        <!--
+             Note the use of android:enabled that is linked to a bool. This will mean this receiver
+             is enabled on KitKat devices and above
+        -->
+        <receiver
+            android:name="com.example.flashalert.receiver.MmsReceiver"
+            android:enabled="@bool/hasKitKat"
+            android:permission="android.permission.BROADCAST_WAP_PUSH" >
 
             <!-- KitKat+ MMS received action -->
             <intent-filter>
                 <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+
                 <data android:mimeType="application/vnd.wap.mms-message" />
             </intent-filter>
-
         </receiver>
 
         <!-- BroadcastReceiver that listens for incoming MMS messages -->
-        <!-- Note the use of android:enabled that is linked to a bool. This will mean this receiver
-             is enabled on preKitKat devices -->
-        <receiver android:name="com.example.flashalert.receiver.MmsReceiverLegacy"
-                  android:enabled="@bool/preKitKat">
+        <!--
+             Note the use of android:enabled that is linked to a bool. This will mean this receiver
+             is enabled on preKitKat devices
+        -->
+        <receiver
+            android:name="com.example.flashalert.receiver.MmsReceiverLegacy"
+            android:enabled="@bool/preKitKat" >
 
             <!-- Pre-KitKat MMS received action -->
             <intent-filter>
                 <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+
                 <data android:mimeType="application/vnd.wap.mms-message" />
             </intent-filter>
-
         </receiver>
-
+        
         <receiver android:name="com.example.flashalert.receiver.PhoneReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
             </intent-filter>
         </receiver>
 

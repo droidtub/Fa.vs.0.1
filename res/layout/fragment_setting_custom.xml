@@ -22,7 +22,7 @@
                 android:id="@+id/tv_limit_battery"
                 style="@style/CustomTitleSetting"
                 android:text="TURN OFF FLASH WHEN BATTERY BELOW" />
-            
+
             <RelativeLayout
                 android:id="@+id/rl_limit_battery"
                 style="@style/CustomRelativeLayoutSetting" >
@@ -37,83 +37,67 @@
                     style="@style/CustomTextViewSetting"
                     android:layout_toRightOf="@+id/icon_limit_battery"
                     android:text="Battery percent" />
-                
-                <TextView
-			        android:id="@+id/on_limit_battery"
-			        style="@style/CustomTextViewSetting_Change_Display"
-			        android:text="30%" />
 
+                <TextView
+                    android:id="@+id/on_limit_battery"
+                    style="@style/CustomTextViewSetting_Change_Display"
+                    android:text="30%" />
             </RelativeLayout>
-            
+
             <TextView
-                android:id="@+id/tv_speed"
+                android:id="@+id/notification_apps"
                 style="@style/CustomTitleSetting"
-                android:text="SPEED" />
-            
+                android:text="NOTIFICATION FOR APPS" />
+
+            <TextView
+                android:id="@+id/do_not_disturb"
+                style="@style/CustomTitleSetting"
+                android:text="DO NOT FLASH BETWEEN" />
+
             <RelativeLayout
-                android:id="@+id/rl_on_length"
+                android:id="@+id/start_time"
                 style="@style/CustomRelativeLayoutSetting" >
 
-                <TextView
-                    android:id="@+id/txt_on_length"
-                    style="@style/CustomTextViewSetting"
-                    android:text="On length" />
-                
-                <TextView
-			        android:id="@+id/on_length_ms"
-			        style="@style/CustomTextViewSetting_Change_Display"
-			        android:text="500ms" />
-            </RelativeLayout>
-            
-            <SeekBar 
-                android:id="@+id/seekbar_on_length"
-                style="@style/CustomSeekbarSetting" />
-            
-            <RelativeLayout
-                android:id="@+id/rl_off_length"
-                style="@style/CustomRelativeLayoutSetting" >
+                <ImageView
+                    android:id="@+id/icon_start_time"
+                    style="@style/CustomImageViewSetting"
+                    android:background="@drawable/ic_launcher" />
 
                 <TextView
-                    android:id="@+id/txt_off_length"
+                    android:id="@+id/txt_start_time"
                     style="@style/CustomTextViewSetting"
-                    android:text="Off length" />
-                
+                    android:layout_toRightOf="@+id/icon_start_time"
+                    android:text="Start Time" />
+
                 <TextView
-			        android:id="@+id/off_length_ms"
-			        style="@style/CustomTextViewSetting_Change_Display"
-			        android:text="500ms" />
+                    android:id="@+id/start_time_value"
+                    style="@style/CustomTextViewSetting_Change_Display"
+                    android:text="00:00"
+                    android:textSize="25sp" />
             </RelativeLayout>
-            
-            <SeekBar 
-                android:id="@+id/seekbar_off_length"
-                style="@style/CustomSeekbarSetting" />
-            
+
+            <RelativeLayout
+                android:id="@+id/end_time"
+                style="@style/CustomRelativeLayoutSetting" >
+
+                <ImageView
+                    android:id="@+id/icon_end_time"
+                    style="@style/CustomImageViewSetting"
+                    android:background="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/txt_end_time"
+                    style="@style/CustomTextViewSetting"
+                    android:layout_toRightOf="@+id/icon_end_time"
+                    android:text="End Time" />
+
+                <TextView
+                    android:id="@+id/end_time_value"
+                    style="@style/CustomTextViewSetting_Change_Display"
+                    android:text="00:00"
+                    android:textSize="25sp" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linear_ad_view_fragment_setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical" >
-        
-        <Button
-            android:id="@+id/btn_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TEST NOW"
-            android:textSize="21dp" />
-
-        <!-- <com.google.android.gms.ads.AdView -->
-        <!-- android:id="@+id/ad_view_fragment_setting" -->
-        <!-- android:layout_width="match_parent" -->
-        <!-- android:layout_height="wrap_content" -->
-        <!-- android:layout_gravity="center" -->
-        <!-- ads:adSize="BANNER" -->
-        <!-- ads:adUnitId="@string/banner_ad_unit_id" -->
-        <!-- android:visibility="gone" > -->
-        <!-- </com.google.android.gms.ads.AdView> -->
-    </LinearLayout>
 
 </RelativeLayout>

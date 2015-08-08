@@ -48,6 +48,7 @@ public class MainView implements View.OnClickListener{
         mBottomBarUi = bottomBarStub.inflate();
         
         ImageButton powerBtn = (ImageButton)mActivity.findViewById(R.id.power_btn);
+        powerBtn.setSelected(pref.getBoolean(Properties.POWER_VALUE, false));
         powerBtn.setOnClickListener(this);
         
         ImageButton shareBtn = (ImageButton)mActivity.findViewById(R.id.share_btn);
@@ -66,22 +67,24 @@ public class MainView implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.power_btn:
-			if(!pref.getBoolean(Properties.POWER, false)){
+			if(!pref.getBoolean(Properties.POWER_VALUE, false)){
 				SharedPreferences.Editor edit = pref.edit();
-				edit.putBoolean(Properties.POWER, true);
+				edit.putBoolean(Properties.POWER_VALUE, true );
 				edit.apply();
 			}
 			else{
 				SharedPreferences.Editor edit = pref.edit();
-				edit.putBoolean(Properties.POWER, false);
+				edit.putBoolean(Properties.POWER_VALUE, false);
 				edit.apply();
-			}
-			v.setSelected(pref.getBoolean(Properties.POWER, false));
+			}	
+			v.setSelected(pref.getBoolean(Properties.POWER_VALUE, false));
 			break;
+			
 		case R.id.settings_btn:
 			Intent i = new Intent(mActivity, SettingActivity.class);
 			mActivity.startActivity(i);
 			break;
+
 		default:
 			break;
 		}

@@ -2,49 +2,36 @@ package com.example.flashalert.utils;
 
 public class Properties {
 	//define constant here
-	public static final String 	PREF_MAIN_NAME = "main_sharedPref";
-
-	public static final String 	POWER = "power";
-	public static final int 	VALUE_POWER_ON = 1;
-	public static final int 	VALUE_POWER_OFF = 0;
+	public static final String PREF_MAIN_NAME = "main_sharedPref";
+	public static final String POWER_VALUE = "power_value";
+	public static final String PREF_CALL_ON_LENGTH_VALUE = "call_on_length_value";
+	public static final String PREF_CALL_OFF_LENGTH_VALUE = "call_off_length_value";
+	public static final String PREF_TXT_ON_LENGTH_VALUE = "txt_on_length_value";
+	public static final String PREF_TXT_OFF_LENGTH_VALUE = "txt_off_length_value";
 	
-	public static final String 	INCOMING_CALL = "incoming_call";
-	public static final int 	VALUE_INCOMING_CALL_ON = 1;
-	public static final int 	VALUE_INCOMING_CALL_OFF = 0;
+	public static final int PREF_DEFAULT_LENGTH_FLASH_ON_OFF = 500;
 	
-	public static final String 	INCOMING_CALL_ON_LENGTH = "incoming_call_on_length";
-	public static final String 	INCOMING_CALL_OFF_LENGTH = "incoming_call_off_length";
+	public static final String PREF_TXT_TIMES_VALUE = "txt_times_value";
 	
-	public static final String 	INCOMING_SMS = "incoming_sms_value";
-	public static final int 	VALUE_INCOMING_SMS_ON = 1;
-	public static final int 	VALUE_INCOMING_SMS_OFF = 0;
-	public static final String 	INCOMING_SMS_ON_LENGTH = "incoming_sms_on_length";
-	public static final String 	INCOMING_SMS_OFF_LENGTH = "incoming_sms_off_length";
-	public static final String 	INCOMING_SMS_BLINK_COUNT = "incoming_sms_blink_count";
+	public static final int PREF_DEFAULT_TXT_TIMES_VALUE = 3;
 	
-	public static final int 	VALUE_DEFAULT_FLASH_ON_OFF = 500;
-	public static final int 	VALUE_DEFAULT_SMS_BLINK_COUNT = 3;
+	public static final String PREF_INCOMING_CALL_VALUE = "incoming_call_value";
+	public static final String PREF_INCOMING_TEXT_VALUE = "incoming_text_value";
+	public static final String PREF_NORMAL_MODE_VALUE = "normal_mode_value";
+	public static final String PREF_VIBRATE_MODE_VALUE = "vibrate_mode_value";
+	public static final String PREF_SILENT_MODE_VALUE = "silent_mode_value";
 	
-	public static final String 	NORMAL = "normal";
-	public static final int 	VALUE_NORMAL_ON = 1;
-	public static final int 	VALUE_NORMAL_OFF = 0;
+	public static final String PREF_BATTERY_VALUE = "battery_value";
+	public static final int PREF_DEFAULT_BATTERY_VALUE = 5;
 	
-	public static final String 	VIBRATE = "vibrate";
-	public static final int 	VALUE_VIBRATE_ON = 1;
-	public static final int 	VALUE_VIBRATE_OFF = 0;
+	public static final String PREF_HOUR_VALUE = "hour_value";
+	public static final String PREF_START_HOUR_VALUE = "start_time_hour_value";
+	public static final String PREF_START_MINUTE_VALUE = "start_time_minute_value";
+	public static final String PREF_END_HOUR_VALUE = "end_time_hour_value";
+	public static final String PREF_END_MINUTE_VALUE = "end_time_minute_value";
 	
-	public static final String 	SILENT = "silent";
-	public static final int 	VALUE_SILENT_ON = 1;
-	public static final int 	VALUE_SILENT_OFF = 0;
 	
-	public static final String 	BATTERY_PERCENT = "battery_percent";
-	public static final int 	VALUE_DEFAULT_BATTERY_PERCENT = 25;
-	
-	public static final String 	TURN_ON_HOUR = "turn_on_hour";
-	public static final int 	VALUE_TURN_ON_HOUR_ON = 1;
-	public static final int 	VALUE_TURN_ON_HOUR_OFF = 0;
-	
-	public static final String 	HOUR_ON = "hour_on";
-	public static final String 	HOUR_OFF = "hour_off";
+	public static final String TYPE_CALL = "incoming_call";
+	public static final String TYPE_SMS = "incoming_sms";
 	
 }

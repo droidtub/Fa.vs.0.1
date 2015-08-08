@@ -9,8 +9,8 @@
         android:layout_weight="0.2"
         android:text="LED Flash for Alerts"
         android:gravity="center" 
-        android:textColor="@color/text_bottom_color"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/text_bottom_color"/>
 
     <FrameLayout
         android:layout_width="fill_parent"
