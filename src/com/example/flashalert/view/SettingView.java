@@ -58,11 +58,11 @@ public class SettingView {
         tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return mActivity.getResources().getColor(R.color.yellow);
+                return mActivity.getResources().getColor(R.color.white);
             }
         });
         
-        tabs.setSelectedIndicatorColors(R.attr.colorPrimaryDark);
+//        tabs.setSelectedIndicatorColors(R.color.white);
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);

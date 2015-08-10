@@ -2,11 +2,14 @@ package com.example.flashalert.view;
 
 
 import com.example.flashalert.R;
+import com.example.flashalert.utils.CommonUtils;
 import com.example.flashalert.utils.Properties;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -54,13 +57,16 @@ public class FragmentSettingNormal extends Fragment implements View.OnClickListe
         silentMode = (RelativeLayout)v.findViewById(R.id.rl_silent_mode);
         
         incomingCallCheckbox = (SwitchCompat)v.findViewById(R.id.switch_incoming_call);
-        incomingCallCheckbox.setChecked(preferences.getBoolean(Properties.PREF_INCOMING_CALL_VALUE, false));
+        incomingCallCheckbox.setChecked(preferences.getBoolean(Properties.PREF_INCOMING_CALL_VALUE, true));
+        CommonUtils.setSwitchChangeColor(incomingCallCheckbox);
+        
         incomingCallCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putBoolean(Properties.PREF_INCOMING_CALL_VALUE, isChecked);
 				editor.commit();
+				CommonUtils.setSwitchChangeColor(incomingCallCheckbox);
 			}
 		});
     	
@@ -77,13 +83,15 @@ public class FragmentSettingNormal extends Fragment implements View.OnClickListe
 		});
     	
     	incomingTextCheckbox = (SwitchCompat)v.findViewById(R.id.switch_incoming_sms);
-        incomingTextCheckbox.setChecked(preferences.getBoolean(Properties.PREF_INCOMING_TEXT_VALUE, false));
+        incomingTextCheckbox.setChecked(preferences.getBoolean(Properties.PREF_INCOMING_TEXT_VALUE, true));
+        CommonUtils.setSwitchChangeColor(incomingTextCheckbox);
         incomingTextCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putBoolean(Properties.PREF_INCOMING_TEXT_VALUE, isChecked);
 				editor.commit();
+				CommonUtils.setSwitchChangeColor(incomingTextCheckbox);
 			}
 		});
     	
@@ -100,13 +108,15 @@ public class FragmentSettingNormal extends Fragment implements View.OnClickListe
 		});
     	
         normalCheckbox = (SwitchCompat)v.findViewById(R.id.switch_normal_mode);
-        normalCheckbox.setChecked(preferences.getBoolean(Properties.PREF_NORMAL_MODE_VALUE, false));
+        normalCheckbox.setChecked(preferences.getBoolean(Properties.PREF_NORMAL_MODE_VALUE, true));
+        CommonUtils.setSwitchChangeColor(normalCheckbox);
         normalCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putBoolean(Properties.PREF_NORMAL_MODE_VALUE, isChecked);
 				editor.commit();
+				CommonUtils.setSwitchChangeColor(normalCheckbox);
 			}
 		});
     	
@@ -124,13 +134,14 @@ public class FragmentSettingNormal extends Fragment implements View.OnClickListe
     	
         vibrateCheckbox = (SwitchCompat)v.findViewById(R.id.switch_vibrate_mode);
         vibrateCheckbox.setChecked(preferences.getBoolean(Properties.PREF_VIBRATE_MODE_VALUE, false));
-        
+        CommonUtils.setSwitchChangeColor(vibrateCheckbox);
         vibrateCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putBoolean(Properties.PREF_VIBRATE_MODE_VALUE, isChecked);
 				editor.commit();
+				CommonUtils.setSwitchChangeColor(vibrateCheckbox);
 			}
 		});
     	
@@ -148,13 +159,14 @@ public class FragmentSettingNormal extends Fragment implements View.OnClickListe
         
         silentCheckbox = (SwitchCompat)v.findViewById(R.id.switch_silent_mode);
         silentCheckbox.setChecked(preferences.getBoolean(Properties.PREF_SILENT_MODE_VALUE, false));
-        
+        CommonUtils.setSwitchChangeColor(silentCheckbox);
         silentCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putBoolean(Properties.PREF_SILENT_MODE_VALUE, isChecked);
 				editor.commit();
+				CommonUtils.setSwitchChangeColor(silentCheckbox);
 			}
 		});
     	

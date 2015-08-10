@@ -2,11 +2,14 @@ package com.example.flashalert.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff.Mode;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
+import android.support.v7.widget.SwitchCompat;
 
 public class CommonUtils {
 	
@@ -124,6 +127,16 @@ public class CommonUtils {
 		//TODO check hour on / off
 
 		return true;
+	}
+	
+	public static void setSwitchChangeColor(SwitchCompat sw) {
+		if(sw.isChecked()){
+			sw.getThumbDrawable().setColorFilter(Color.parseColor("#59911e"),Mode.MULTIPLY );
+			sw.getTrackDrawable().setColorFilter(Color.parseColor("#7059911e"),Mode.MULTIPLY );
+    	} else {
+    		sw.getThumbDrawable().setColorFilter(Color.parseColor("#808080"),Mode.MULTIPLY );
+    		sw.getTrackDrawable().setColorFilter(Color.parseColor("#70808080"),Mode.MULTIPLY );
+    	}
 	}
 
 }

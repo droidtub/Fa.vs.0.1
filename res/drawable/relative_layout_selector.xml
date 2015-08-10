@@ -5,7 +5,7 @@
  <!-- pressed -->
     <item android:drawable="@color/bg_white" android:state_focused="true"/>
     <item android:drawable="@color/bg_white" android:state_selected="true"/>
-    <item android:drawable="@color/background_fragment"/>
+    <item android:drawable="@color/windowBackground"/>
  <!-- default -->
 
 </selector>

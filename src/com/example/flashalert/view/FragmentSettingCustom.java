@@ -2,6 +2,7 @@ package com.example.flashalert.view;
 
 
 import com.example.flashalert.R;
+import com.example.flashalert.utils.CommonUtils;
 import com.example.flashalert.utils.Properties;
 
 import android.app.Dialog;
@@ -12,17 +13,22 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 
 public class FragmentSettingCustom extends Fragment implements View.OnClickListener,
 													TimePickerFragment.TimePickerDialogListener{
 
+	private SwitchCompat notifiApps;
 	private RelativeLayout startTime;
 	private RelativeLayout endTime;
 	private TextView startTimeValue;
@@ -38,6 +44,30 @@ public class FragmentSettingCustom extends Fragment implements View.OnClickListe
         View v =inflater.inflate(R.layout.fragment_setting_custom,container,false);
         pref = getActivity().getSharedPreferences(Properties.PREF_MAIN_NAME, Context.MODE_PRIVATE);
         editor = pref.edit();
+        notifiApps = (SwitchCompat)v.findViewById(R.id.switch_notification_apps);
+        notifiApps.setChecked(pref.getBoolean(Properties.PREF_INCOMING_TEXT_VALUE, true));
+        CommonUtils.setSwitchChangeColor(notifiApps);
+        notifiApps.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				SharedPreferences.Editor editor = pref.edit();
+				editor.putBoolean(Properties.PREF_INCOMING_TEXT_VALUE, isChecked);
+				editor.commit();
+				CommonUtils.setSwitchChangeColor(notifiApps);
+			}
+		});
+    	
+        notifiApps.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				boolean mValue = pref.getBoolean(Properties.PREF_INCOMING_TEXT_VALUE, false);
+				if(notifiApps != null){
+					notifiApps.setChecked(mValue);
+				}
+				
+			}
+		});
         
         startTime = (RelativeLayout)v.findViewById(R.id.start_time);
         endTime = (RelativeLayout)v.findViewById(R.id.end_time);

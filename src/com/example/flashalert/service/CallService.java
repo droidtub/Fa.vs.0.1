@@ -78,7 +78,6 @@ public class CallService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.e(TAG, "onStartCommand");
-		Log.e(TAG, intent.getAction());
 
 		if (intent == null || intent.getAction() == null) {
 			return super.onStartCommand(intent, flags, startId);

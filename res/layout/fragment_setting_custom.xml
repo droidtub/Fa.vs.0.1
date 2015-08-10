@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_fragment" >
+    android:background="@color/windowBackground" >
 
     <ScrollView
         android:id="@+id/scroll_body"
@@ -48,6 +48,26 @@
                 android:id="@+id/notification_apps"
                 style="@style/CustomTitleSetting"
                 android:text="NOTIFICATION FOR APPS" />
+            
+             <RelativeLayout
+                android:id="@+id/rl_notification_apps"
+                style="@style/CustomRelativeLayoutSetting" >
+
+                <ImageView
+                    android:id="@+id/icon_notification_apps"
+                    style="@style/CustomImageViewSetting"
+                    android:background="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/txt_notification_apps"
+                    style="@style/CustomTextViewSetting"
+                    android:layout_toRightOf="@+id/icon_notification_apps"
+                    android:text="Notification Apps \n(Pro ver)" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_notification_apps"
+                    style="@style/CustomSwitchSetting" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/do_not_disturb"
@@ -73,7 +93,7 @@
                     android:id="@+id/start_time_value"
                     style="@style/CustomTextViewSetting_Change_Display"
                     android:text="00:00"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -95,7 +115,7 @@
                     android:id="@+id/end_time_value"
                     style="@style/CustomTextViewSetting_Change_Display"
                     android:text="00:00"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

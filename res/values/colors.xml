@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#212121</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#212121</color>
+    <color name="colorPrimary">#6ea51d</color>
+    <color name="colorPrimaryDark">#59911e</color>
+    <color name="textColorPrimary">#606ea51d</color>
+    <color name="windowBackground">#2a2a2a</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#FF80AB</color>
     <color name="text_bottom_color">#FF5722</color>
@@ -17,7 +17,7 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="background_action_bar">#5d79e4</color>
     <color name="background_status_bar">#455ec5</color>
-    <color name="background_fragment">#fafafa</color>
+    <color name="background_fragment">#242424</color>
     
     <color name="textBlack">#000000</color>
     <color name="textColor_dialog">#3498db</color>
@@ -34,7 +34,7 @@
     <color name="ios_text_blue">#000000</color>
     <color name="ios_title_bg">#f3f2f2</color>
     <color name="ios_subtitle_text">#aa4E4E4E</color>
-    <color name="ios_subtitle_bg">#ffE5E5E5</color>
+    <color name="ios_subtitle_bg">#454545</color>
     <color name="ios_text_details">#ff7F7F7F</color>
     <color name="ios_text_red">#ffFF3B30</color>
     <color name="color_popup_line">#d5d5d5</color>
@@ -51,9 +51,9 @@
     <color name="tab_unselected">#2980b9</color>
     <color name="tab_selected">#3498db</color>
 	
-    <color name="bg_white">#fff</color>
+    <color name="bg_white">#60242424</color>
     <color name="bg_white_blur">#fafafa</color>
-    <color name="bg_gray">#e2e2e2</color>
+    <color name="bg_gray">#90e2e2e2</color>
      
     <color name="text_disabled">#afff</color> 
     <color name="tab_indicator">#FFFF85</color>
