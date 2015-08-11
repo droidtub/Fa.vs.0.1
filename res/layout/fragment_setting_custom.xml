@@ -7,10 +7,17 @@
     android:layout_height="match_parent"
     android:background="@color/windowBackground" >
 
+    <View 
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#15d05a4a" />
+    
     <ScrollView
         android:id="@+id/scroll_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/shadow"
         android:layout_above="@+id/linear_ad_view_fragment_setting" >
 
         <LinearLayout
@@ -21,7 +28,7 @@
             <TextView
                 android:id="@+id/tv_limit_battery"
                 style="@style/CustomTitleSetting"
-                android:text="TURN OFF FLASH WHEN BATTERY BELOW" />
+                android:text="PERSONALIZATION" />
 
             <RelativeLayout
                 android:id="@+id/rl_limit_battery"
@@ -43,11 +50,14 @@
                     style="@style/CustomTextViewSetting_Change_Display"
                     android:text="30%" />
             </RelativeLayout>
+            
+            <View 
+		        style="@style/CustomViewDivider" />
 
-            <TextView
-                android:id="@+id/notification_apps"
-                style="@style/CustomTitleSetting"
-                android:text="NOTIFICATION FOR APPS" />
+<!--             <TextView -->
+<!--                 android:id="@+id/notification_apps" -->
+<!--                 style="@style/CustomTitleSetting" -->
+<!--                 android:text="NOTIFICATION FOR APPS" /> -->
             
              <RelativeLayout
                 android:id="@+id/rl_notification_apps"
@@ -72,7 +82,7 @@
             <TextView
                 android:id="@+id/do_not_disturb"
                 style="@style/CustomTitleSetting"
-                android:text="DO NOT FLASH BETWEEN" />
+                android:text="FLASH ON/OFF" />
 
             <RelativeLayout
                 android:id="@+id/start_time"
@@ -95,6 +105,9 @@
                     android:text="00:00"
                     android:textSize="22sp" />
             </RelativeLayout>
+            
+            <View 
+		        style="@style/CustomViewDivider" />
 
             <RelativeLayout
                 android:id="@+id/end_time"

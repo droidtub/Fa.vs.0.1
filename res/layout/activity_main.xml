@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
-        android:text="LED Flash for Alerts"
+        android:text="Flash Alerts"
         android:gravity="center" 
         android:textSize="18sp"
         android:textColor="@color/text_bottom_color"/>

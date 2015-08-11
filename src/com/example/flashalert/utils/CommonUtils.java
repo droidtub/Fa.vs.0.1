@@ -131,11 +131,11 @@ public class CommonUtils {
 	
 	public static void setSwitchChangeColor(SwitchCompat sw) {
 		if(sw.isChecked()){
-			sw.getThumbDrawable().setColorFilter(Color.parseColor("#59911e"),Mode.MULTIPLY );
-			sw.getTrackDrawable().setColorFilter(Color.parseColor("#7059911e"),Mode.MULTIPLY );
+			sw.getThumbDrawable().setColorFilter(Color.parseColor("#f9f6f6"),Mode.MULTIPLY );
+			sw.getTrackDrawable().setColorFilter(Color.parseColor("#80f9f6f6"),Mode.MULTIPLY );
     	} else {
-    		sw.getThumbDrawable().setColorFilter(Color.parseColor("#808080"),Mode.MULTIPLY );
-    		sw.getTrackDrawable().setColorFilter(Color.parseColor("#70808080"),Mode.MULTIPLY );
+    		sw.getThumbDrawable().setColorFilter(Color.parseColor("#8f8e8e"),Mode.MULTIPLY );
+    		sw.getTrackDrawable().setColorFilter(Color.parseColor("#608f8e8e"),Mode.MULTIPLY );
     	}
 	}
 
