@@ -62,7 +62,7 @@ public class SettingView {
             }
         });
         
-//        tabs.setSelectedIndicatorColors(R.color.white);
+//        tabs.setSelectedIndicatorColors(R.attr.colorPrimaryDark);
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);

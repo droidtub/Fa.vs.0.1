@@ -78,7 +78,8 @@ public class CallService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.e(TAG, "onStartCommand");
-
+		//Log.e(TAG, intent.getAction());
+		
 		if (intent == null || intent.getAction() == null) {
 			return super.onStartCommand(intent, flags, startId);
 		}
@@ -94,9 +95,10 @@ public class CallService extends Service {
 
 		if (curState.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_RINGING)) {
 			// TODO flicker led
+			Log.e(TAG, "RING RING");
 			int onLength = prefs.getInt(Properties.PREF_CALL_ON_LENGTH_VALUE, Properties.PREF_DEFAULT_LENGTH_FLASH_ON_OFF);
 			int offLength = prefs.getInt(Properties.PREF_CALL_OFF_LENGTH_VALUE, Properties.PREF_DEFAULT_LENGTH_FLASH_ON_OFF);
-			commonUtils.flickFlash(onLength, offLength);
+			commonUtils.flickFlash(500, 500);
 		}
 		return super.onStartCommand(intent, flags, startId);
 	}

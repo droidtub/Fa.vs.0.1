@@ -142,7 +142,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         TypedValue outValue = new TypedValue();
-        getContext().getTheme().resolveAttribute(R.color.white,
+        getContext().getTheme().resolveAttribute(R.color.bg_gray,
                 outValue, true);
         textView.setBackgroundResource(outValue.resourceId);
         textView.setAllCaps(true);

@@ -25,6 +25,7 @@ public class PhoneReceiver extends BroadcastReceiver {
 		// TODO check sharepreferences
 		commonUtils = new CommonUtils();
 		if (!commonUtils.checkSetup(context.getApplicationContext(), Properties.TYPE_CALL)) {
+			Log.e("han.hanh", "PhoneReceiver: return");
 			return;
 		}
 

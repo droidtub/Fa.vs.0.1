@@ -10,11 +10,12 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:windowBackground">@color/windowBackground</item>
+        
     </style>
 
     <style name="CustomImageViewSetting">
-        <item name="android:layout_width">35dp</item>
-        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">17dp</item>
     </style>
@@ -56,7 +57,7 @@
         <item name="android:layout_marginRight">17dp</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
-    
+
     <style name="CustomTextViewSetting_Change_Display">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">33dp</item>
@@ -65,10 +66,10 @@
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">19sp</item>
         <item name="android:textStyle">normal</item>
     </style>
-    
+
     <style name="CustomSeekbarSetting">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -77,12 +78,33 @@
         <item name="android:layout_marginLeft">21dp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+
+    <style name="DialogTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">18dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+   
+    </style>
     
     <style name="CustomViewDivider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginLeft">70dp</item>
         <item name="android:background">#15d05a4a</item>
+    </style>
+    
+    <style name="CustomTextViewBottombar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <!-- <item name="android:textStyle">bold</item> -->
     </style>
 
 </resources>

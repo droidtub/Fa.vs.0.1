@@ -2,27 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bottom_bar"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="48dp">
+    android:layout_height="wrap_content">
 
-    <ImageButton
+   <TextView
         android:id="@+id/share_btn"
-        android:layout_width="0dp"
-        android:layout_weight="1.0"
-        android:layout_height="match_parent" 
-        android:background="@color/windowBackground"/>
+        style="@style/CustomTextViewBottombar"
+        android:text="Share"/>
     <TextView
         android:id="@+id/settings_btn"
-        android:layout_width="0dp"
-        android:layout_weight="1.0"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Setting"
-        android:textSize="18sp"
-        android:textColor="@color/text_bottom_color"/>
-    <ImageButton
+        style="@style/CustomTextViewBottombar"
+        android:text="Setting"/>
+    <TextView
         android:id="@+id/like_btn"
-        android:layout_width="0dp"
-        android:layout_weight="1.0"
-        android:layout_height="match_parent" 
-        android:background="@color/windowBackground"/>
+        style="@style/CustomTextViewBottombar"
+        android:text="Like"/>
 </LinearLayout>

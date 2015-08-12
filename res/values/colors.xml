@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#232121</color>
-    <color name="colorPrimaryDark">#262626</color>
+    <color name="colorPrimary">#6ea51d</color>
+    <color name="colorPrimaryDark">#59911e</color>
     <color name="textColorPrimary">#606ea51d</color>
     <color name="windowBackground">#262626</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">#FF80AB</color>
+    <color name="colorAccent">#ffffff</color>
     <color name="text_bottom_color">#FF5722</color>
     
     <color name="list_item_title">#fff</color>
@@ -17,7 +17,7 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="background_action_bar">#5d79e4</color>
     <color name="background_status_bar">#455ec5</color>
-    <color name="background_fragment">#242424</color>
+    <color name="background_fragment">#454545</color>
     
     <color name="textBlack">#000000</color>
     <color name="textColor_dialog">#3498db</color>

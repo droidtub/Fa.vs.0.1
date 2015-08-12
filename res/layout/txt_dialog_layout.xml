@@ -3,15 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@color/background_fragment"
     android:orientation="vertical">
     
 	
+    <TextView
+        android:id="@+id/incoming_text_title"
+      	style="@style/DialogTitle"
+        android:text="Incoming SMS"
+         />
+    
 	<RelativeLayout
 	    android:id="@+id/text_rl_on_length"
-	    style="@style/CustomRelativeLayoutSetting" >
+	    style="@style/CustomRelativeLayoutSetting"
+	    android:background="@null" >
 	
 	    <TextView
 	        android:id="@+id/text_txt_on_length"
@@ -27,11 +34,13 @@
 	
 	<SeekBar
 	    android:id="@+id/text_seekbar_on_length"
-	    style="@style/CustomSeekbarSetting" />
+	    style="@style/CustomSeekbarSetting" 
+	    android:max="1000"/>
 	
 	<RelativeLayout
 	    android:id="@+id/text_rl_off_length"
-	    style="@style/CustomRelativeLayoutSetting" >
+	    style="@style/CustomRelativeLayoutSetting"
+	    android:background="@null" >
 	
 	    <TextView
 	        android:id="@+id/text_txt_off_length"
@@ -47,16 +56,18 @@
 	
 	<SeekBar
 	    android:id="@+id/text_seekbar_off_length"
-	    style="@style/CustomSeekbarSetting" />
+	    style="@style/CustomSeekbarSetting" 
+	    android:max="1000"/>
 	
 	<RelativeLayout
 	    android:id="@+id/text_rl_flash_time"
-	    style="@style/CustomRelativeLayoutSetting" >
+	    style="@style/CustomRelativeLayoutSetting"
+	    android:background="@null" >
 	
 	    <TextView
 	        android:id="@+id/text_txt_flash_time"
 	        style="@style/CustomTextViewSetting"
-	        android:text="Flash Times" />
+	        android:text="Flash times" />
 	
 	    <TextView
 	        android:id="@+id/text_flash_time"
@@ -68,6 +79,51 @@
 	<SeekBar
 	    android:id="@+id/text_seekbar_flash_time"
 	    style="@style/CustomSeekbarSetting"
-	    android:max="10"
-	    android:progress="1" />
+	    android:max="9"
+	    android:progress="3" />
+	
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:weightSum="3">
+        
+	    <TextView
+            android:id="@+id/txtOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:text="OK"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="visible" 
+            android:layout_weight="1"/>
+	    
+	    <TextView 
+            android:id="@+id/txtTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:text="TEST ON"
+            android:textColor="@color/white"
+            android:textSize="16sp"         
+            android:layout_weight="1"/>
+	    
+         <TextView
+            android:id="@+id/txtCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          	android:layout_toRightOf="@+id/txtTest"
+          	android:paddingRight="30dp"
+          	android:paddingLeft ="30dp"
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_weight="1"/>         
+         
+     </RelativeLayout>
 </LinearLayout>

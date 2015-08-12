@@ -24,7 +24,7 @@ public class Properties {
 	public static final String PREF_BATTERY_VALUE = "battery_value";
 	public static final int PREF_DEFAULT_BATTERY_VALUE = 5;
 	
-	public static final String PREF_HOUR_VALUE = "hour_value";
+	public static final String PREF_SET_TIME_VALUE = "set_time_on_off";
 	public static final String PREF_START_HOUR_VALUE = "start_time_hour_value";
 	public static final String PREF_START_MINUTE_VALUE = "start_time_minute_value";
 	public static final String PREF_END_HOUR_VALUE = "end_time_hour_value";
