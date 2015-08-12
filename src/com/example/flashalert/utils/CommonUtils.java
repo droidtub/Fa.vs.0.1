@@ -174,16 +174,22 @@ public class CommonUtils {
 		    Log.e("CallService", "date:" + startTime + "  " + endTime + "  " + nowTime);
 		    try {
 		        Date endDate =  new SimpleDateFormat("HH:mm").parse(endTime);
-	
 		        Date startDate = new SimpleDateFormat("HH:mm").parse(startTime);
-	
 		        Date nowDate =  new SimpleDateFormat("HH:mm").parse(nowTime);
-	
-		        if (nowDate.after(startDate) && nowDate.before(endDate)) {
-		        	Log.e("CallService", "date in");
+		        if (hourOn <= hourOff) {
+			        if (nowDate.after(startDate) && nowDate.before(endDate)) {
+			        	Log.e("CallService", "date in");
+			        } else {
+			        	Log.e("CallService", "date out");
+			            return false;
+			        }
 		        } else {
-		        	Log.e("CallService", "date out");
-		            return false;
+		        	if (nowDate.before(startDate) && nowDate.after(endDate)) {
+			        	Log.e("CallService", "date in");
+			        	return false;
+			        } else {
+			        	Log.e("CallService", "date out");
+			        }
 		        }
 		    } catch (ParseException e) {
 		        e.printStackTrace();
